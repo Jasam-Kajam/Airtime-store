@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airtime Store</title>
+</head>
+<body>
+  <h1>Buy Bundles</h1>
+  <form action="/checkout" method="post">
+    <select name="bundleId">
+      <% bundles.forEach(bundle => { %>
+        <option value="<%= bundle.id %>"><%= bundle.name %> - KES <%= bundle.price %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Buy</button>
+  </form>
+</body>
+</html>
