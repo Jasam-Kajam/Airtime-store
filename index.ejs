@@ -4,14 +4,15 @@
   <title>Airtime Store</title>
 </head>
 <body>
-  <h1>Buy Bundles</h1>
-  <form action="/checkout" method="post">
-    <select name="bundleId">
-      <% bundles.forEach(bundle => { %>
-        <option value="<%= bundle.id %>"><%= bundle.name %> - KES <%= bundle.price %></option>
-      <% }) %>
-    </select>
-    <button type="submit">Buy</button>
+  <h1>Select an Airtime Bundle</h1>
+  <form action="/checkout" method="POST">
+    <% bundles.forEach(bundle => { %>
+      <div>
+        <input type="radio" name="bundleId" value="<%= bundle.id %>" required>
+        <%= bundle.name %> - KES <%= bundle.price %>
+      </div>
+    <% }) %>
+    <button type="submit">Buy Now</button>
   </form>
 </body>
 </html>

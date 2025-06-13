@@ -5,10 +5,10 @@
 </head>
 <body>
   <h1>Checkout - <%= bundle.name %></h1>
-  <form action="/pay" method="post">
+  <form action="/pay" method="POST">
     <input type="hidden" name="bundleName" value="<%= bundle.name %>">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <button type="submit">Pay KES <%= bundle.price %></button>
+    <label>Your Name: <input type="text" name="name" required></label><br>
+    <button type="submit">Pay Now</button>
   </form>
 </body>
 </html>

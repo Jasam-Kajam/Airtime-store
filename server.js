@@ -8,9 +8,9 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 const bundles = [
-  { id: 1, name: 'Daily Bundle (100MB)', price: 10 },
-  { id: 2, name: 'Weekly Bundle (500MB)', price: 50 },
-  { id: 3, name: 'Monthly Bundle (5GB)', price: 300 }
+  { id: 1, name: 'Daily Airtime - 10 KES', price: 10 },
+  { id: 2, name: 'Weekly Airtime - 50 KES', price: 50 },
+  { id: 3, name: 'Monthly Airtime - 300 KES', price: 300 }
 ];
 
 app.get('/', (req, res) => {
@@ -25,7 +25,8 @@ app.post('/checkout', (req, res) => {
 });
 
 app.post('/pay', (req, res) => {
-  res.render('success', { name: req.body.name, bundleName: req.body.bundleName });
+  const { name, bundleName } = req.body;
+  res.render('success', { name, bundleName });
 });
 
 app.listen(PORT, () => {
